@@ -1,13 +1,19 @@
 use std::net::SocketAddr;
 
 use clap::Parser;
-use hyper::{service::service_fn, Body, Client, Request, Response, Server};
-use tower::make::Shared;
+use hyper::{body, server::conn::http1, service::service_fn, Request, Response};
+use hyper_util::{
+    client::legacy::Client,
+    rt::{TokioExecutor, TokioIo},
+};
+use tokio::net::TcpListener;
 
 mod cli;
 use cli::Cli;
 
-async fn log(req: Request<Body>) -> Result<Response<Body>, hyper::Error> {
+async fn log(
+    req: Request<body::Incoming>,
+) -> Result<Response<hyper::body::Incoming>, hyper_util::client::legacy::Error> {
     let path = req.uri().path();
 
     if path.starts_with("/api") {
@@ -19,20 +25,30 @@ async fn log(req: Request<Body>) -> Result<Response<Body>, hyper::Error> {
     handle(req).await
 }
 
-async fn handle(req: Request<Body>) -> Result<Response<Body>, hyper::Error> {
-    let client = Client::new();
+async fn handle(
+    req: Request<body::Incoming>,
+) -> Result<Response<hyper::body::Incoming>, hyper_util::client::legacy::Error> {
+    let client = Client::builder(TokioExecutor::new()).build_http();
     client.request(req).await
 }
 
 #[tokio::main]
-async fn main() {
+async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let cli = Cli::parse();
     println!("cli: {:?}", cli);
     let addr: SocketAddr = format!("{}:{}", cli.host, cli.port).parse().unwrap();
-    let make_service = Shared::new(service_fn(log));
-    let server = Server::bind(&addr).serve(make_service);
 
-    if let Err(e) = server.await {
-        println!("error: {}", e);
+    let listener = TcpListener::bind(addr).await?;
+    loop {
+        let (stream, _) = listener.accept().await?;
+        let io = TokioIo::new(stream);
+        tokio::task::spawn(async move {
+            if let Err(err) = http1::Builder::new()
+                .serve_connection(io, service_fn(log))
+                .await
+            {
+                println!("error: {}", err);
+            }
+        });
     }
 }
