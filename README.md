@@ -6,3 +6,4 @@ rest, openapi, json-rpc, openrpc, reversed http and websocket api tools
 
 * echo server
 * http proxy
+* mitm proxy

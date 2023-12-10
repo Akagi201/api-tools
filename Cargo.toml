@@ -2,6 +2,7 @@
 members = [
     "echo-server",
     "http-proxy",
+    "mitm-proxy",
 ]
 resolver = "2"
 
