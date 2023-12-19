@@ -1,9 +1,10 @@
 # api-tools
 
-rest, openapi, json-rpc, openrpc, reversed http and websocket api tools
+rest, openapi, json-rpc, openrpc, forward/reversed http and websocket api tools
 
 ## Tools
 
 * echo server
-* http proxy
+* forward proxy
 * mitm proxy
+* forward proxy nginx

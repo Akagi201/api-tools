@@ -1,7 +1,7 @@
 [workspace]
 members = [
     "echo-server",
-    "http-proxy",
+    "forward-proxy",
     "mitm-proxy",
 ]
 resolver = "2"
