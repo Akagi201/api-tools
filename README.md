@@ -9,6 +9,10 @@ rest, openapi, json-rpc, openrpc, forward/reversed http and websocket api tools
 * mitm proxy
 * forward proxy nginx
 
+## Websocket tools
+
+* <https://github.com/vi/websocat>
+
 ## OpenAPI Generator
 
 * <https://openapi-generator.tech/docs/generators/rust/>
