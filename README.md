@@ -25,3 +25,7 @@ rest, openapi, json-rpc, openrpc, forward/reversed http and websocket api tools
 ## API testing
 
 * <https://github.com/jikkenio/jikken>
+
+## Websocket bench
+
+* <https://github.com/c410-f3r/wtx-bench> - <https://c410-f3r.github.io/wtx-bench/>
