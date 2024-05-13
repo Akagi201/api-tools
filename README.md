@@ -12,6 +12,7 @@ rest, openapi, json-rpc, openrpc, forward/reversed http and websocket api tools
 ## Reversed proxy
 
 * <https://github.com/vicanso/pingap> - http reverse proxy
+* <https://github.com/Cabbache/rsintercept> - http / websocket proxy
 
 ## Websocket tools
 
