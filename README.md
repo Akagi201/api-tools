@@ -22,6 +22,11 @@ rest, openapi, json-rpc, openrpc, forward/reversed http and websocket api tools
 
 * <https://openapi-generator.tech/docs/generators/rust/>
 * <http://api.openapi-generator.tech/index.html>
+* <https://github.com/Superflows-AI/openapi-llm> - generate OpenAPI Spec and description with LLM
+
+## API Gateway
+
+* <https://tailcall.run/>
 
 ## OpenAPI Doc
 
