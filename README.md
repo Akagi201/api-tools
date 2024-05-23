@@ -35,6 +35,12 @@ rest, openapi, json-rpc, openrpc, forward/reversed http and websocket api tools
 ## API testing
 
 * <https://github.com/jikkenio/jikken>
+* <https://github.com/Orange-OpenSource/hurl>
+
+## API benchmark
+
+* <https://github.com/hatoo/oha>
+* <https://github.com/fcsonline/drill>
 
 ## Websocket bench
 
