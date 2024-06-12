@@ -18,6 +18,10 @@ rest, openapi, json-rpc, openrpc, forward/reversed http and websocket api tools
 
 * <https://github.com/vi/websocat>
 
+## GRPC Tools
+
+* <https://github.com/grpcmd/grpcmd>
+
 ## OpenAPI Generator
 
 * <https://openapi-generator.tech/docs/generators/rust/>
@@ -27,6 +31,10 @@ rest, openapi, json-rpc, openrpc, forward/reversed http and websocket api tools
 ## API Gateway
 
 * <https://tailcall.run/>
+
+## API management tools
+
+* <https://github.com/LucasPickering/slumber/> - support both cli and tui
 
 ## OpenAPI Doc
 
