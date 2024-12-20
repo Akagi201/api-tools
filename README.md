@@ -37,9 +37,11 @@ rest, openapi, json-rpc, openrpc, forward/reversed http and websocket api tools
 
 * <https://github.com/LucasPickering/slumber/> - support both cli and tui
 
-## OpenAPI Doc
+## OpenAPI Tools
 
-* <https://scalar.com/>
+* <https://scalar.com/> - openapi doc
+* <https://github.com/Redocly/redoc>
+* <https://openapi.tools/>
 
 ## API testing
 
