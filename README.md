@@ -48,6 +48,7 @@ rest, openapi, json-rpc, openrpc, forward/reversed http and websocket api tools
 
 * <https://github.com/jikkenio/jikken>
 * <https://github.com/Orange-OpenSource/hurl>
+* <https://www.thunderclient.com/>
 
 ## API benchmark
 
